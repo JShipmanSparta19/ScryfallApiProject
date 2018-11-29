@@ -10,8 +10,13 @@ public class App
     {
         SetList setList = new SetList();
         setList.setCoreSets();
-        System.out.println(setList.getCoreSets());
         setList.setExpertLvExpansions();
-        System.out.println(setList.getExpertLvExpansions());
+        SetGenerator setGenerator = new SetGenerator(setList.getCoreShortList(), setList.getExpansionShortList());
+        System.out.println(setGenerator.generateChaosStandard());
+        System.out.println(setGenerator.generateScryfallLink());
+
+
+//        System.out.println(setList.getCoreSets());
+//        System.out.println(setList.getExpertLvExpansions());
     }
 }

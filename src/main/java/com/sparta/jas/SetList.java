@@ -47,4 +47,30 @@ public class SetList {
             }
         }
     }
+
+    public JSONArray getCoreShortList(){
+        JSONArray coreSetShortList = new JSONArray();
+        for (Object set: coreSets) {
+            JSONObject coreSet = (JSONObject) set;
+            JSONObject coreSetShort = new JSONObject();
+            coreSetShort.put("code", coreSet.get("code"));
+            coreSetShort.put("name", coreSet.get("name"));
+            coreSetShort.put("set_type", coreSet.get("set_type"));
+            coreSetShortList.add(coreSetShort);
+        }
+        return coreSetShortList;
+    }
+
+    public JSONArray getExpansionShortList(){
+        JSONArray expansionShortList = new JSONArray();
+        for (Object set: expertLvExpansions) {
+            JSONObject expansion = (JSONObject) set;
+            JSONObject expansionShort = new JSONObject();
+            expansionShort.put("code", expansion.get("code"));
+            expansionShort.put("name", expansion.get("name"));
+            expansionShort.put("set_type", expansion.get("set_type"));
+            expansionShortList.add(expansionShort);
+        }
+        return expansionShortList;
+    }
 }
